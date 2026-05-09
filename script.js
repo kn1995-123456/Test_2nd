@@ -1,0 +1,1 @@
+console.log("JavaScript動作確認");
