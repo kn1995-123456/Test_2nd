@@ -1,31 +1,60 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Homepage</title>
+  <title>K.N WEB Test</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <header>
-    <h1>My Portfolio</h1>
+    <h1>Portfolio</h1>
   </header>
 
   <main class="container">
 
     <section class="card">
       <h2>Profile</h2>
-      <p>Web開発を学習中です。</p>
+      <ul>
+        <li>北海道</li>
+        <li>31歳</li>
+        <li>男性</li>
+        <li>職業：社内SE</li>
+        <li>既婚</li>
+        <li>子1人</li>
+        <li>犬1匹</li>
+      </ul>
+
+      <h2>Remarks</h2>
+      <p>田舎の小さな会社で社内SEをしています。</p>
+      <p>社内システムが中心のため、主にWindowsアプリケーションに関わる業務が多く、モダンな言語に触れる機会は多くありません。</p>
+      <p>自分自身のスキルアップを目指して、Web技術学習中！</p>
+      <p>フロントエンドからバックエンドまで幅広く対応できるフルスタックエンジニアを目指しています。</p>
+
     </section>
 
     <section class="card">
       <h2>Skills</h2>
       <ul>
-        <li>VB.NET</li>
-        <li>Python</li>
-        <li>Oracle</li>
+        <li>VB.NET／6年目</li>
+        <li>Python／2年目</li>
+        <li>GAS／1年目</li>
+        <li>HTML／1年目</li>
+        <li>CSS／1年目</li>
+        <li>JavaScript／1年目</li>
+        <li>Oracle／6年目</li>
       </ul>
+
+      <button id="changeButton">
+        メッセージ変更
+      </button>
+
+      <p id="message">
+        こんにちは
+      </p>
     </section>
 
   </main>
@@ -36,4 +65,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
