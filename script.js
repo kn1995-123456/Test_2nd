@@ -15,6 +15,7 @@ greetButton.addEventListener("click", () => {
 });
 
 //TODOアプリ
+// 初期表示
 const todoInput =
   document.getElementById("todoInput");
 const addTodoButton =
@@ -30,7 +31,7 @@ function renderTodos() {
   todoList.innerHTML = "";
 
   todos.forEach((todo, index) => {
-    F
+
     const li =
       document.createElement("li");
     li.textContent = todo;
@@ -66,6 +67,7 @@ function saveTodos() {
 
 }
 
+renderTodos();
 
 // 追加イベント
 addTodoButton.addEventListener("click", () => {
@@ -87,5 +89,24 @@ addTodoButton.addEventListener("click", () => {
 });
 
 
-// 初期表示
-renderTodos();
+
+
+//ダークモード
+// 保存状態確認
+const darkMode = localStorage.getItem("darkMode");
+
+// ONならclass追加
+if (darkMode === "true") {
+  document.body.classList.add("dark-mode");
+}
+
+themeButton.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  // 現在状態取得
+  const isDarkMode = document.body.classList.contains("dark-mode");
+  // 保存
+  localStorage.setItem(
+    "darkMode",
+    isDarkMode
+  );
+});
