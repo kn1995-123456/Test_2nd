@@ -18,6 +18,10 @@ header {
 
 }
 
+#page_explanation {
+  padding-left: 20px;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;

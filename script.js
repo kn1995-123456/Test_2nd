@@ -17,13 +17,57 @@ greetButton.addEventListener("click", () => {
 //TODOアプリ
 const todoInput =
   document.getElementById("todoInput");
-
 const addTodoButton =
   document.getElementById("addTodoButton");
-
 const todoList =
   document.getElementById("todoList");
 
+// localStorageから取得
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
+
+// 表示関数
+function renderTodos() {
+  todoList.innerHTML = "";
+
+  todos.forEach((todo, index) => {
+    F
+    const li =
+      document.createElement("li");
+    li.textContent = todo;
+
+    // 削除ボタン
+    const deleteButton =
+      document.createElement("button");
+    deleteButton.textContent = "削除";
+    deleteButton.addEventListener("click", () => {
+
+      todos.splice(index, 1);
+
+      saveTodos();
+
+      renderTodos();
+
+    });
+
+    li.appendChild(deleteButton);
+    todoList.appendChild(li);
+
+  });
+
+}
+
+// 保存関数
+function saveTodos() {
+
+  localStorage.setItem(
+    "todos",
+    JSON.stringify(todos)
+  );
+
+}
+
+
+// 追加イベント
 addTodoButton.addEventListener("click", () => {
 
   const task = todoInput.value;
@@ -32,29 +76,16 @@ addTodoButton.addEventListener("click", () => {
     return;
   }
 
-  const li =
-    document.createElement("li");
+  todos.push(task);
 
-  li.textContent = task;
+  saveTodos();
 
-  // 削除ボタン作成
-  const deleteButton =
-    document.createElement("button");
+  renderTodos();
 
-  deleteButton.textContent = "削除";
-
-  // 削除イベント
-  deleteButton.addEventListener("click", () => {
-    li.remove();
-  });
-
-  // liへ追加
-  li.appendChild(deleteButton);
-
-  // ulへ追加
-  todoList.appendChild(li);
-
-  // 入力欄クリア
   todoInput.value = "";
 
 });
+
+
+// 初期表示
+renderTodos();
