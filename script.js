@@ -1,12 +1,10 @@
+//挨拶アプリ
 const greetButton =
   document.getElementById("greetButton");
-
 const nameInput =
   document.getElementById("nameInput");
-
 const greetingMessage =
   document.getElementById("greetingMessage");
-
 greetButton.addEventListener("click", () => {
 
   const name = nameInput.value;
@@ -16,6 +14,7 @@ greetButton.addEventListener("click", () => {
 
 });
 
+//TODOアプリ
 const todoInput =
   document.getElementById("todoInput");
 
@@ -38,8 +37,24 @@ addTodoButton.addEventListener("click", () => {
 
   li.textContent = task;
 
+  // 削除ボタン作成
+  const deleteButton =
+    document.createElement("button");
+
+  deleteButton.textContent = "削除";
+
+  // 削除イベント
+  deleteButton.addEventListener("click", () => {
+    li.remove();
+  });
+
+  // liへ追加
+  li.appendChild(deleteButton);
+
+  // ulへ追加
   todoList.appendChild(li);
 
+  // 入力欄クリア
   todoInput.value = "";
 
 });
