@@ -75,21 +75,72 @@
 
     <section class="card">
 
-      <!--挨拶アプリ-->
-      <h2>Greeting App</h2>
-      <input type="text" id="nameInput" placeholder="名前を入力">
-      <button id="greetButton">
-        挨拶する
-      </button>
-      <p id="greetingMessage"></p>
+      <h2>Mini Apps</h2>
 
-      <!--ToDoアプリ-->
-      <h2>ToDo App</h2>
-      <input type="text" id="todoInput" placeholder="タスク入力">
-      <button id="addTodoButton">
-        追加
-      </button>
-      <ul id="todoList"></ul>
+      <!-- タブ -->
+      <div class="tab-buttons">
+
+        <button class="tab-button active" data-tab="greeting">
+          Greeting App
+        </button>
+
+        <button class="tab-button" data-tab="todo">
+          ToDo App
+        </button>
+
+        <button class="tab-button" data-tab="github">
+          GitHub API Test
+        </button>
+
+      </div>
+
+
+      <!-- Greeting -->
+      <div class="tab-content active" id="greeting">
+
+        <h3>Greeting App</h3>
+
+        <input type="text" id="nameInput" placeholder="名前を入力">
+
+        <button id="greetButton">
+          挨拶する
+        </button>
+
+        <p id="greetingMessage"></p>
+
+      </div>
+
+
+      <!-- ToDo -->
+      <div class="tab-content" id="todo">
+
+        <h3>ToDo App</h3>
+
+        <input type="text" id="todoInput" placeholder="タスク入力">
+
+        <button id="addTodoButton">
+          追加
+        </button>
+
+        <ul id="todoList"></ul>
+
+      </div>
+
+
+      <!-- GitHub -->
+      <div class="tab-content" id="github">
+
+        <h3>GitHub API Test</h3>
+
+        <input type="text" id="githubInput" placeholder="GitHubユーザー名">
+
+        <button id="githubButton">
+          取得
+        </button>
+
+        <div id="githubResult"></div>
+
+      </div>
 
     </section>
 

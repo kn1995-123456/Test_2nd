@@ -110,3 +110,134 @@ themeButton.addEventListener("click", () => {
     isDarkMode
   );
 });
+
+//GitHub情報取得
+const githubInput =
+  document.getElementById("githubInput");
+
+const githubButton =
+  document.getElementById("githubButton");
+
+const githubResult =
+  document.getElementById("githubResult");
+
+
+// GitHub取得処理
+async function fetchGithubUser() {
+
+  const username =
+    githubInput.value;
+
+  if (username === "") {
+    return;
+  }
+
+  githubResult.innerHTML =
+    "<p>Loading...</p>";
+
+  try {
+
+    const response = await fetch(
+      `https://api.github.com/users/${username}`
+    );
+
+    if (!response.ok) {
+
+      throw new Error(
+        "ユーザーが見つかりません"
+      );
+
+    }
+
+    const data =
+      await response.json();
+
+    githubResult.innerHTML = `
+      <h3>${data.login}</h3>
+
+      <img
+        src="${data.avatar_url}"
+        width="100"
+      >
+
+      <p>
+        Followers:
+        ${data.followers}
+      </p>
+
+      <p>
+        Public Repos:
+        ${data.public_repos}
+      </p>
+    `;
+
+  } catch (error) {
+
+    githubResult.innerHTML = `
+      <p>${error.message}</p>
+    `;
+
+  }
+
+}
+
+
+// ボタンクリック
+githubButton.addEventListener(
+  "click",
+  fetchGithubUser
+);
+
+
+// Enterキー
+githubInput.addEventListener(
+  "keydown",
+  (event) => {
+
+    if (event.key === "Enter") {
+
+      fetchGithubUser();
+
+    }
+
+  }
+);
+
+const tabButtons =
+  document.querySelectorAll(".tab-button");
+
+const tabContents =
+  document.querySelectorAll(".tab-content");
+
+
+tabButtons.forEach((button) => {
+
+  button.addEventListener("click", () => {
+
+    // active削除
+    tabButtons.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    tabContents.forEach((content) => {
+      content.classList.remove("active");
+    });
+
+
+    // button active
+    button.classList.add("active");
+
+
+    // 対象tab取得
+    const tabId =
+      button.dataset.tab;
+
+
+    // content active
+    document
+      .getElementById(tabId)
+      .classList.add("active");
+
+  });
+
+});
