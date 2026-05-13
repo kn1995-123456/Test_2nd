@@ -18,9 +18,6 @@
 
   </header>
 
-  <p id="page_explanation">※このページでは HTML / CSS / JavaScript を使用して学習を進めています。</p>
-
-
   <main class="container">
 
     <section class="card">
@@ -47,13 +44,19 @@
       <h2>Skills</h2>
 
       <h3>【言語】</h3>
-      <p>VB.NET / Python / JavaScript<span class="required">*</span></p>
+      <p>VB.NET / Python / JavaScript<span class="red_asterisk">*</span></p>
 
       <h3>【フロントエンド】</h3>
       <p>
-        HTML<span class="required">*</span> /
-        CSS<span class="required">*</span> /
-        JavaScript<span class="required">*</span>
+        HTML<span class="red_asterisk">*</span> /
+        CSS<span class="red_asterisk">*</span> /
+        JavaScript<span class="red_asterisk">*</span>
+      </p>
+
+      <h3>【バックエンド】</h3>
+      <p>
+        Node.js<span class="red_asterisk">*</span> /
+        Express<span class="red_asterisk">*</span>
       </p>
 
       <h3>【データベース】</h3>
@@ -64,12 +67,12 @@
 
       <h3>【バージョン管理】</h3>
       <p>
-        Git<span class="required">*</span> /
-        GitHub<span class="required">*</span> /
-        Subversion
+        Git<span class="red_asterisk">*</span> /
+        GitHub<span class="red_asterisk">*</span> /
+        SVN
       </p>
 
-      <p>※(<span class="required">*</span>)印は習得中</p>
+      <p>※(<span class="red_asterisk">*</span>)印は習得中</p>
 
     </section>
 
@@ -90,6 +93,10 @@
 
         <button class="tab-button" data-tab="github">
           GitHub API Test
+        </button>
+
+        <button class="tab-button" data-tab="myAPI">
+          My API Test
         </button>
 
       </div>
@@ -139,6 +146,20 @@
         </button>
 
         <div id="githubResult"></div>
+
+      </div>
+
+      <!--自作APIテスト-->
+      <div class="tab-content" id="myAPI">
+
+        <h3>My API Test</h3>
+        <button id="apiButton" disabled>
+          API取得
+        </button>
+
+        <p id="apiMessage">
+          ※GitHub Pagesではnode.jsが実行できない為、無効化しています
+        </p>
 
       </div>
 

@@ -18,10 +18,6 @@ header {
 
 }
 
-#page_explanation {
-  padding-left: 20px;
-}
-
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -36,7 +32,7 @@ header {
   flex: 1;
 }
 
-.card .required {
+.card .red_asterisk {
   color: red;
 }
 

@@ -227,7 +227,6 @@ tabButtons.forEach((button) => {
     // button active
     button.classList.add("active");
 
-
     // 対象tab取得
     const tabId =
       button.dataset.tab;
@@ -241,3 +240,27 @@ tabButtons.forEach((button) => {
   });
 
 });
+
+const apiButton =
+  document.getElementById("apiButton");
+
+const apiMessage =
+  document.getElementById("apiMessage");
+
+
+apiButton.addEventListener(
+  "click",
+  async () => {
+
+    const response = await fetch(
+      "http://localhost:3000/api/message"
+    );
+
+    const data =
+      await response.json();
+
+    apiMessage.textContent =
+      data.message;
+
+  }
+);
