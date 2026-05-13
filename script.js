@@ -253,7 +253,7 @@ apiButton.addEventListener(
   async () => {
 
     const response = await fetch(
-      "http://localhost:3000/api/message"
+      "https://server-test-dk5y.onrender.com/api/message"
     );
 
     const data =
